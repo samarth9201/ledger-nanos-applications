@@ -26,7 +26,7 @@ APPVERSION_M=1
 APPVERSION_N=0
 APPVERSION_P=0
 APPVERSION=$(APPVERSION_M).$(APPVERSION_N).$(APPVERSION_P)
-APPNAME = "Hello, World"
+APPNAME = "Boilerplate"
 
 DEFINES += $(DEFINES_LIB)
 
@@ -149,7 +149,7 @@ release: all
 	export APP_LOAD_PARAMS_EVALUATED="$(shell printf '\\"%s\\" ' $(APP_LOAD_PARAMS))"; \
 	cat load-template.sh | envsubst > load.sh
 	chmod +x load.sh
-	tar -zcf helloworld-ledger-app-$(APPVERSION).tar.gz load.sh bin/app.hex
+	tar -zcf boilerplate-ledger-app-$(APPVERSION).tar.gz load.sh bin/app.hex
 	rm load.sh
 
 # import generic rules from the sdk
@@ -161,4 +161,4 @@ dep/%.d: %.c Makefile
 
 
 listvariants:
-	@echo VARIANTS COIN helloworld
+	@echo VARIANTS COIN boilerplate
